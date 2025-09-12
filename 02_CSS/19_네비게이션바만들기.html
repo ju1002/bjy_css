@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>네브바만들기</title>
+    <style>
+        nav,ul,li{
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        nav{
+            width: 1000px;
+            height: 40px;
+        }
+        #navbar{
+            margin:0;
+            padding:0;
+            height: 100px;
+            list-style: none;
+        
+        }
+        #navbar>li{
+            height: 100%;
+            float: left;
+             width:16%;
+             text-align: center;
+        }
+        #navbar a{
+            text-decoration: none;
+            color:blueviolet;
+            font-family: "궁서체";
+            font-weight:900;
+            width:100%;
+            height:100%;
+            display: block;
+            line-height: 40px;
+            position: relative;
+            transform: scale(1);
+        }
+        /*평소에 안보이다가 커서 올라가면 펼처지게*/
+        #navbar>li>ul{
+            list-style: none;
+            padding:0;
+            display:none;
+            border:1px solid skyblue;
+
+        }
+    #navbar{
+         
+    }
+
+    #naver>ul>li{
+
+    }
+    
+    
+
+    </style>
+</head>
+<body>
+    <nav>
+        <ul id="navbar" ></ul>
+        
+                    <li><a href="#">Top</a></li>
+                    <li><a href="#">Bottom</a></li>
+                    <li><a href="#">Dress</a></li>
+                    <li><a href="#">Outer</a></li>
+        
+            <li><a href="#">셔츠/블라우스</a></li>
+            <li><a href="#">나시</a></li>
+            <li><a href="#">티셔츠</a></li>
+            <li><a href="#">맨투맨</a></li>
+
+            <li><a href="#">Bottom</a>
+                <ul>
+                    <li><a href="#">스커트</a></li>
+                    <li><a href="#">팬츠</a></li>
+           </li>
+           <li><a href="#">Outer</a></li>
+               <ul>
+                    <li><a href="#">자켓</a></li>
+                    <li><a href="#">w집업</a></li>
+                    <li><a href="#">패딩</a></li>
+                    <li><a href="#">코트</a></li>
+
+
+
+               </ul>
+
+        </ul>
+        
+    </nav>
+    
+</body>
+</html>

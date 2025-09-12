@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>색깔놀이</title>
+<style>
+    #color{
+        color: blue;
+        color: rgb(71, 110, 174);
+        background-color:#03c75a;
+        color:rgb(255,113,100);/*빨,파,녹으로 색조절가능*/
+        color: rgba(255,113,212,0);/*0~!숫자가 작을 수록 투명*/
+        color: hsl(200,50%,70%)/*색상값(0~360%),채도%,명도%*/
+    }
+    /*f12를 눌러 개발자설정으로 들어가서 확인할 수 있다.*/
+/*text-decoration*/
+    #td1{
+        text-decoration:underline;
+
+    }
+    #td2{
+        text-decoration:overline;
+    }
+    #td3{
+        text-decoration:line-through;
+    }
+
+
+  a{
+    text-decoration:none;
+    color:rgb(50,50,50);/*이거를꼭 달아주자*/
+    &:hover{
+        text-decoration: underline;
+        font-size:17px;
+        color:rgba(50,50,50,0.4);
+    }
+  }
+  /*a태그를 쓸때는 무조건 underline을 없애야 한다!!*/
+
+
+
+
+</style>
+
+
+
+
+
+
+
+</head>
+<body>
+    <h1>색깔놀이하기~~</h1>
+    <pre id="color">
+        [표현법]
+        선택자{
+            color:색상값;
+        }
+    </pre>
+<hr>
+
+<h3>text-decoration:텍스트에 줄을 긋거나 지울 때 사용</h3>
+<pre>
+    [표현법]
+    선택자{
+        text-decoration: none/underline/ overline/ line-through;
+    }
+</pre>
+
+<ul>
+    <li id="td1">아래에 선긋기</li>
+    <li id="td2">위에 선긋기</li>
+    <li id="td3">중간에 선긋기</li>
+</ul>
+<!--안긋기,아래긋기 ,위에긋기 , 중간에 긋기-->
+<a href="http://www.naver.con">네이버로</a>
+<hr>
+<h3>text=aligh:텍츠트를 정렬할 때 사용</h3>
+<pre>
+    [표현법]
+    선택자{
+        text-align:left/right/center/justify;
+    }                                                                                                                                                                                              
+</pre>
+<ul>
+<h4>
+    <p style="text-align:right;">
+        고생끝에 낙이온다잉
+    </p>
+</h4>
+<h4>
+    <p style="text-align:center;">
+        고생끝에 낙이온다잉
+
+    </p>
+</h4>
+<h4>
+    <p style="text-alight:justify;">
+        고생끝에 낙이온다잉
+    </p>
+</h4>
+<h4>
+    <p style="text-alight:left;">
+        고생끝에 낙이온다잉
+    </p>
+</h4>
+
+
+</ul>
+
+</body>
+</html>

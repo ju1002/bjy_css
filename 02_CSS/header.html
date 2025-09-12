@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>4화면구조잡기</title>
+    <style>
+        div {
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+
+        #wrap {
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+            background-color: lightgray;
+        }
+
+        /*크게 3개의 영역으로 나눔 
+header / container/footer*/
+        #wrap>div {
+            width: 100%;
+
+        }
+        
+        
+        
+        
+        
+        /*header/footer 영역 부모요소의20%*/
+        #header {
+            position:fixed;
+            width: 1000oxl;
+            height: 160px;
+            ;
+        }
+        #header_1 {
+            height: 20%;
+            display: flex;
+            font-weight:lighter;
+            font-size: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        
+        #header_2 {
+            height: 80%;
+            display: flex;
+        }
+
+
+        #headering_1 {
+            flex: 2;
+        }
+
+        #headering_2 {
+            flex: 8;
+            font-size: 50px;
+            font-family: "";
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-style:"궁서체";
+            
+        }
+        
+        #headering_3 {
+            flex: 3;
+        }
+        
+        
+        
+        #p-1 {
+            color:rgba(15, 2, 2, 0.836);;
+        }
+        
+        form{
+            display:flex;
+           
+            
+        }
+        #a-1 {
+            text-decoration: none;}
+
+            #search-form input{
+               width:200%;
+               height:100%;
+               box-sizing: border-box;
+               align-content: flex-end;
+               justify-content: flex-end;
+            color: rgba(15, 2, 2, 0.836);
+        }
+        #search-btn{
+            width:20px;
+            align-content: flex-end;
+            justify-content: flex-end;
+
+        }
+        </style>
+</head>
+
+<body>
+    <div id="wrap">
+
+
+        <div id="header">
+            <div id="header_1">
+                <div id="headbar_1">
+                    
+                    <form action="search"method="get" id="search-form">
+                        <div id="search-text">
+                            <input type="text" name="query">
+                        </div>
+                        
+                            <div id="search-btn">
+                                <input type="submit"value="search"/>
+                            </div>
+    
+    
+                    </form>
+                </div>
+
+                
+                <div id="headbar_2">
+                    <a href="" id="a-1">Languge</a>
+
+                </div>
+
+            </div>
+
+
+            <div id="header_2">
+                <div id="headering_1"></div>
+
+                <div id="headering_2">
+                    <p id="p-1">KOREA MAGAZIN</p>
+                </div>
+
+                <div id="headering_3">
+                   
+                </div>
+            </div>
+
+        </div>
+        <div id="main">
+           
+        </div>
+        <div id="footer">
+
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

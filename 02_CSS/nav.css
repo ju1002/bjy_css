@@ -1,0 +1,49 @@
+
+        nav,ul,li{
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        nav{
+            width: 1000px;
+            height: 40px;
+        }
+        #navbar{
+            margin:0;
+            padding:0;
+            height: 100px;
+            list-style: none;
+        
+        }
+        #navbar>li{
+            height: 100%;
+            float: left;
+             width:16%;
+             text-align: center;
+        }
+        #navbar a{
+            text-decoration: none;
+            color:blueviolet;
+            font-family: "궁서체";
+            font-weight:900;
+            width:100%;
+            height:100%;
+            display: block;
+            line-height: 40px;
+        }
+        /*평소에 안보이다가 커서 올라가면 펼처지게*/
+        #navbar>li>ul{
+            list-style: nene;
+            padding:0px;;
+            display:none;
+
+        }
+    #navbar>l>ll{
+         disply:none;
+    }
+
+    #naver>ul>li{
+
+    }
+    
+    
+

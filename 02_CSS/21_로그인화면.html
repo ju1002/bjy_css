@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>로그인화면</title>
+
+    <style>
+
+
+
+
+
+
+        #content_1{
+            flex:1.5;
+        }
+        #content_2{
+            flex:1.5;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #login-area{
+            width:350px;
+            height:350px;
+            border-radius:20px;
+            box-shadow:1px 1px 1px rgba(0,0,0,0.14);
+            display:flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #login-input input{
+            border-radius: 10px;
+            border:none;
+            box-shadow: 1px 1px 1px lightblue;
+            &:focus {
+                outline:1px solid lightblue;
+            }
+        }
+        #login-btn button{
+            width:200px;
+            background: green;
+            border-radius: 10px;
+            border:1px solid gray;
+            &:hover{
+                cursor: pointer;
+                background: black;
+            }
+        }
+        #input-id input,
+        #input-pwd input{
+            background: lightyellow;
+        }
+        #contetn_3{
+            flex:7;
+        }
+
+
+
+
+
+
+
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+
+
+
+
+        </header>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <main>
+        <div id="content_1"></div>
+        <div id="content_2">
+            <div id="login-area">
+             <div id="login-input"></div>
+
+
+
+              <div id="input-id">
+                  <p>아이디</p>
+                  <div><input type="text"></div>
+              </div>
+             <div id="input-pwd">
+                 <p>비밀번호</p>
+                 <div><input type="password"></div>
+             </div>
+             <div id="login-btn">
+                 <button>로그인</button>
+                 
+             </div>
+
+            
+            </div>
+
+        </div>
+        <div id="content_3"></div>
+        <a href="로그인화면가기"></a>
+    </main>
+    <footer>
+
+
+
+
+    </footer>    
+</body>
+</html>

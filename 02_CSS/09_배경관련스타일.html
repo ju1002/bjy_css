@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>백그라운드</title>
+    <style>
+        body{
+            background-color: rgb(206, 98, 10);
+        }
+        #be-color{
+            border: 50px solid rgb(192, 166, 18);
+            padding:50px;
+            background-color: pink;
+            /*div요소의 contetn영역 가로길이를 부모요소의 50%로지정*/
+            width: 30px;
+            box-sizing : border-box
+            /*가로길이설정을 border영역까지 포함시키겠따*/
+        }
+        #bg-image{
+            border:1px solid red;
+            width: 100%;
+            height: 800px;
+            background-image:url(https://i.namu.wiki/i/OKv1GoYKkH24Q3tnbPoyIkvc2VP6MsEBYeyf62-HQnFcO3gk1ZQGuDuNeWzVXtqQGFYrpu2wH1f_iLKZxzmdvGT5coce4kAW905grR9oePFzLSdoQwubkBBSPjUAEZxWFM7EdHk-apRsrqdpiZxh1Q.webp);
+            background-repeat: no-repeat;
+            background-position : center;
+            background-size: auto;
+            background-attachment: fixed;
+        }
+        .test{
+            border:10px dashed;
+            margin: 40px;
+            padding: 40px;
+            background-color:brown;
+            /*보더라인까지 색이 들어감*/
+        }
+        #div1{
+            background-clip:border-box;
+
+        }
+        #div2{
+            background-clip:padding-box;
+        }
+        #div3{
+            background-clip: content-box;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<h1>배경관련 스타일</h1>
+<h3>background-color:배경색을 지정할 수 있는 스타일 속성</h3>
+
+<div id="be-color">웃을 수 있을때 언제든 웃어라.공짜 보약이다.</div>
+
+<hr>
+
+<h3> 배경으로 이미지넣기</h3>
+<pre>
+    [표현법]
+    선택자{
+        background-image:url(이미지경로);
+        background-repeat: repeat/repeat-x/repeat-y/no-repeat
+        background-size: auto/contain/cover/숫자(px/%)
+        background-position: left/right/center;
+                              top/botton/center;
+        background-attachment: scroll/fixed;
+    }
+</pre>
+<div id="bg-image">이상혁</div>
+
+<hr>
+
+<h3>background-clip:배경을 적용하고자하는 범위를 지정할 때 사용</h3>
+<pre>
+    [표현법]
+    선택자{
+        background-clip: 
+    }
+    <div id="div1" class="test">오늘의명언:모든길은 나를 통한다!</div>
+    <div id="div2" class="test">오늘의명언:모든길은 나를 통한다!</div>
+    <div id="div3" class="test">오늘의명언:모든길은 나를 통한다!</div>
+    
+    
+</pre>
+
+
+
+    
+</body>
+</html>

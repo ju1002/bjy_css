@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>구조를 잡아보자</title>
+    <style>
+
+        div,main,header,footer{
+            border:1px solid red;
+            box-sizing: border-box; 
+        }
+        #wrap{
+            width:1000px;
+            height:800px;
+            margin:auto;
+            flex-direction: column;
+            /*세로로 배치하기*/
+        }
+        /*header,footer영역*/
+        header{
+            flex:2;
+        }
+        main{
+            flex:6;
+            display: flex;
+        }
+        /*main의 내부영역*/
+        #content_1{
+            flex:7;
+        }
+        #contern_2{
+            flex:3;
+        }
+        footer{
+            flex:2;
+        }
+
+    </style>
+</head>
+<body>
+    <!--1.구상 후 몇개의 요소로 나눌지 정함
+        2. 시멘틱태그로 할지 div로할지
+        3. 부모요소를 이용해서 위치를 바꿀껀지 정함-->
+    <div id="wrap">
+        <header>
+
+        </header>
+        <main>
+            <div id="content1"></div>
+            <div id="content2"></div>
+
+        </main>
+        <footer>
+            
+        </footer>
+    </div>
+    
+</body>
+</html>

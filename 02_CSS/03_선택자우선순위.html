@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>선택자우선순위</title>
+<style>
+    #id1{
+        background-color: green;
+    }
+    h1{
+        color : aliceblue;
+        background-color: black;
+    }
+    /*id선택자가 태그 선택자보다 우선순위가 더 높다.*/
+
+h1{
+    color:rgb(223, 141, 33);
+}
+/*같은 스타일속성에 대해 덮어씀 즉 마지막으로 지정한 스타일 속성을 결정됨*/
+.class1{
+    background-color: darkkhaki;
+    color: yellow;
+}
+h1{
+    color:aquamarine!important;
+}
+
+
+
+
+
+</style>
+
+</head>
+<body>
+<h1 id = "id1"class="class1">선택자 우선순위</h1>
+
+
+
+<pre>
+     기본적으로 css는 스타일이 위에서부터 아래 순서로 적용
+     동일한 요소를 동일한 선택자를 이용해서 스타일을 부여할 경우
+     하단에 위취한 스타일속성이 적용
+     동일한 요소를 다양한 선택자를 이용해서 스타일 부여할 경우
+     우선순위에 따라 적용
+
+     우선순위 순위
+     태그선택자->클래스선택자->아이디선택자->인라인스타일 방식(최대한 안쓰는게 좋음)->!important(금단의기술인것이여)
+     !important를 뒤에 작성시 무조건 그 스타일로 적용됨(이것은 금단의 기술인 것이여~)
+
+</pre>
+
+
+
+
+    
+</body>
+</html>

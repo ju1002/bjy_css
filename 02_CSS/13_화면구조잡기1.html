@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>1.화면구조잡기</title>
+    <style>
+        div{
+            border:1px solid red;
+             box-sizing: border-box;
+        }
+        #wrap{
+            width:1000px;
+            height:800px;
+            margin:auto;
+        }
+/*크게 3개의 영역으로 나눔 
+header / container/footer*/
+#wrap> div{
+    width:100%;
+
+}
+
+
+
+
+
+
+#header{
+    height:10%;
+}
+#container{
+    height:80%;
+}
+#footer{
+    height:10%;
+}
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <div id="header"></div>
+        <div id="container"></div>
+        <div id="footer"></div>
+    </div>
+   
+
+    
+</body>
+</html>
