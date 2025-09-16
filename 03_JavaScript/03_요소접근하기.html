@@ -51,30 +51,36 @@
 
 <hr>
 
-<div id="back-color"class="area" style="background: yellowgreen"></div>
+<div id="color-div"class="area" style="background: yellowgreen"></div>
 <button id="color-btn">다음 시간은 실습시간</button>
 
 <!-- 버튼을 클릭할 때 마다 div요소색깔이 바뀌게
  일곱 빛깔돌리기 => 자바했을 때 조건문을 떠올리기 -->
  <script>
 
-    document.getElementById('#color-btn').onclick= function(){
-        const color1 = document.getElementById('#back-color');
+    const colorBtn = document.querySelector('#color-btn');
+    colorBtn.onclick = function () {
+        const colorDiv = document.querySelector('#color-div');
         //console.log(color);
-        console.dir(color1);
+        console.log(colorDiv.style.backgroundColor);
       // console.log(color1.innerHTML);
        //console.log(color1.innerText);// 이게 get한거잖아
       //set은
-       //if(color1.style.backgroundColor == "yellowgreen"){
-        //color1.style.backgroundColor="red";
-       //}
-        
+       if(colorDiv.style.backgroundColor =="yellowgreen")
+       {colorDiv.style.backgroundColor="yellow"; }
 
-       
-      
-      
+       else if(colorDiv.style.backgroundColor =="yellow")
+       {colorDiv.style.backgroundColor = "lightblue";}  
+       else if(colorDiv.style.backgroundColor == "lightblue")
+    { colorDiv.style.backgroundColor = "gold";}
 
-
+    else if(colorDiv.style.backgroundColor == "gold")
+{ colorDiv.style.backgroundColor = "beige"
+}else if(colorDiv.style.backgroundColor =="beige"){
+    colorDiv.style.backgroundColor = "greenyellow";
+}else{
+    colorDiv.style.backgroundColor ="yellowgreen";
+}      
     };
  </script>
 
@@ -99,13 +105,128 @@
         console.log(array);
         console.log(array.length); //선택된 여러 개의 요소객체들이 배열 형태로 담겨서 반환
                                     //자바스크립트에서의 배열은[]로 표현
-        arry[0].style.background ="red";
+        array[0].style.background ="red";
+        array[1].style.background = "oranged";
+        array[2].style.background = "yellow";
+        array[3].style.background = "green";
+        array[4].sytle.background ="blue"
+
+        let redColor = 100;
+        for(let id=0; i<array.length; i++){
+            array[i].style.backgroundColor = `rgb(${redColor}),180,180)`;
+            redColor +=30;
+        }
+
     }
  </script>
 
+ <hr>
+
+ <h3>3)name속성값으로 요소객체 접근해보기</h3>
+ <!-- name 속성은 form태그에서 사용하기 위해 작성  -->
+  <form action="요청받아줄 서버" method="get">
+
+    <fieldset>
+        <legend>메뉴</legend>
+
+        <input type="checkbox" name="menu" value ="아메리카노"/>아메리카노<!--value를 통해 값이 넘어가도록 한다.-->
+        <input type="checkbox" name="menu" value = "콜드브루"/>콜드브루
+        <input type="checkbox" name="menu" value = "라떼"/>라떼
+        <input type="checkbox" name="menu" value = "딸기라떼"/>딸기라떼
+        <input type="checkbox" name="menu" value = "말차라떼"/>말차라떼
+
+        <button type="submit">버튼</button>
+    </fieldset>
 
 
 
+
+
+
+  </form>
+
+  <button id="menu-btn">버튼입니다!</button>
+
+<script>
+    const btnEl = document.querySelector('#menu-btm');
+    console.dir(btnEl);
+   // btnEl.addEventListener("click",function(){
+
+    //name속성값을 이용해서 요소객체들 접근하기
+    //document.getElementsByName('name 속성값');
+        const menus = document.getElementsByName("menu");
+        console.log(menus);
+        console.log(menus[0]);
+        console.log(menus[0].value);
+        console.log(menus[0].checked);
+
+// 만약에 버튼을 클릭했을 때 아메리카노 체크박스가
+//체크된 상태라면 alert창을 띄우겠다.
+if(menus[0].checked){
+    alert("아메리카노 췍");
+};
+
+// 버튼클릭 시 체크가 된 체크박스의 value속성값을 순차적으로 나열 하여 alert창에 출력하시오 . 선택하신 메뉴는 ~~입니다.
+
+let checkMenu ="";
+/*for(menus[0].checked){
+    checkMenu +=''+menus[0].value;
+}
+if(menus[1].checked) {
+    checkMenu += "" + menus[1].value;
+}
+if(menus[2].cheked){
+    checkMenu += ""+ menus[2].value;
+}
+    */
+for(let i =0; i<menus.length; i++){
+    if(menus[i].checked){
+        checkMenu+=""+menus[i].value;
+    }
+}
+const array = [...menus];
+const selected = array.filter((e)=> e.checked).map((m)=>m.value);
+console.log(`선택한 메뉴들${slelected}`);
+
+
+
+
+if(checkMenu!=""){
+    alert(`선택하신 메뉴는 ${checkMenl}입니다`);
+    
+}
+//자바스크립트의 논리값
+//자바의 논리값 == true,false
+//자바스크립트는 모든 값이 논리값으로 쓰일 수 있음
+//false == 0, 0.0 ,'', null , "" , undefined , NaN
+console.log(+"a");
+
+
+
+
+</script>
+
+
+<hr>
+
+<h4>4)클래스 속성명으로 요소 객체들 접근하기</h4>
+<div class="test"></div>
+<p class="test"></p>
+<ul class="test"></ul>
+<li class="test"></li>
+<pre></pre>
+
+
+<button onclick="accessClass();">class속성으로 선택하기</button>
+<script>
+    function accessClass(){
+        documents.getElementByClassName("test")
+        console.log(document)
+    }
+
+
+
+</script>
 
 
 
