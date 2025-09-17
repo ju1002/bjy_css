@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>함수</title>
+
+    <style>
+        .area{
+            width: 500px;
+            height: 200px;
+            border:1px solid tomato;
+            background-color: salmon;
+        }
+
+    </style>
+</head>
+<body>
+    <p>2차 민생 쿠폰 지급 받으세요 밑에꺼 누르세요</p>
+<a href="http://www.google.com">http://www.naver.com</a>
+
+<hr>
+
+<h1>함수 ! function</h1>
+
+<!-- 
+1.선언적 함수 : 식별자가 달려있는 함수 , 식별자를 호출해서  실행
+
+2. 익명함수 : 이름일 없음, 속성에 함수를 대입해서 구현-->
+
+ <h3>선언적 함수</h3>
+ 
+ <pre>
+    [표현법]
+    function 함수명(매개변수 , 매개변수){
+        함수를 호출했을 때 실행할 코드;
+
+        return 결과값;
+    }
+    -매개변수가 없는 경우 생략 가능
+    -반환할 결과값이없는 경우 return 생략 가능
+ </pre>
+
+    <div id="area1" class="area" onclick = "firstFn();"></div>
+    <script>
+        function firstFn(){ /*함수의 존재 이유 : 코드의 재사용 , 함수 식별자를 이용해서 의미를 전달*/
+            document.getElementById('area1').innerHTML = "함수 호출";
+        }
+
+    </script>
+
+<hr>
+
+<h3>익명함수</h3>
+
+<pre>
+    [표현법]
+    변수/속성 = () =>{
+        소스코드가 어쩌고 저쩌고~~~
+    }
+    => 주로 이벤트 핸들러 작성 시 사용
+</pre>
+
+<button id="btn">뻐뜬!</button>
+<div id="area2" class="area"></div>
+
+<script>
+    const btnEl = document.getElementById("btn");
+    btnEl.onclick = () =>{
+        //버튼을 클릭했을 때 수행하고 싶은 코드들을 적는 곳
+        //버튼 요소에 클릭 이벤트가 발생 했을 때 요걸 하고 싶음
+        // 특정 이벤트  발생 시 동작시킬 코드 뭉치 ==이벤트 핸들러
+        //재사용은 안함
+        document.getElementById("area2").innerHTML ="함수 호출";
+    }
+</script>
+
+<hr>
+
+<h3>함수의 매개변수</h3>
+<br>
+<button></button>
+<button onclick="parameterFn('문자열')">string문자열</button>
+<button onclick="parameterFn(100)">number전달</button>
+<button onclick="parameterFn([1,2,3])">array전달</button>
+<button onclick="parameterFn(prompt('이름~?'))">함수전달</button>
+<button onclick="parameterFn()">전달 없음</button>
+<!-- 실행에는 문자가 없지만 단, undefined가 대입 -->
+<button onclick="parameterFn(1,2)">더 많이 전달</button>
+<!-- 실행에는 문제가 없음 / 단 초과된  -->
+<!-- 자료형과는 무관하게 인자값의 개수와 매개변수의 개수만 동일 하다면 어떤형채의 값이든 전달가능 -->
+<div id="area3" class="area"></div>
+
+<script>
+    function parameterFn(value){
+//전달하는 값을 받기위해 받을 매개변수가 있어야함 대신 자료형을 지정하지 않고 var/let키워드도 사용안하고
+//오로지 변수명만  작성하면 된다.
+console.log(value);
+document.getElementById("area3").innerHTML = value;
+    }
+
+    
+
+</script>
+
+<button onclick ="test(10,30,50,60,70,80,90,80)"></button>
+<button onclick =test(2)"">커튼  삼</button>
+
+<script>
+    function test(){
+        console.log*at
+    //함수 호추시 전달하는 인자값은 ㄴ ㅐ부ㅠ 적을 ㅗargument로 박ㅇ
+    // 마
+    }
+    
+    
+</script>
+
+<hr>
+
+<h3>매개변수로 this키워드 전달(선언적 함수 ver)</h3>
+<!-- 함수를 호출한 요소 자기자신을 전달한다. -->
+ <button onclick="color(this)" id="btn1"></button> <br>
+ <button onclick="color(this)" id="btn2"></button>
+<script>
+    //ver0.1
+    function changeColor1(){
+        document.getElementById("btn1").style.color = "oranged";
+
+    };
+    function changeColor2(){
+        document.getElementById("btn2").style.color ="orangered";
+    };
+
+    //ver0.2
+    function changeColor(value){
+        if(value===1){
+            document.getElementById("btn1").style.color = "orangered";
+        }else{
+            document.getElementById("btn2").style.color = "orangered";
+        }};
+
+//ver0.3
+function change(value){
+    document.getElementById(`btn${value}`).style.color ="orangered";
+};
+//ver0.4
+function color(value){
+
+    console.log(value);
+    value.sytle.color = "orangered";
+}
+//마지막 function에는 ;을 안붙임
+</script>
+<hr>
+
+<h2>함수의 반환 return</h2>
+
+<button onclick="random();">실행하기</button>
+<div id="area6" class="area"></div>
+<script>
+    //1. const random =  parseInt(Math.random()*10)+1;
+    // 1번처럼 외부 말고 함수 내부에서 사용하고 샆다.
+    function generateNum(){
+        const num = parseInt(Math.random()*10)+1;
+
+       // return num; 
+       //함수도 return가능
+       return function naming (name){
+        return`${name}님의 랜덤한 숫자 : ${num}`;
+       };
+    }
+    //바 깥에서 generate를 사용하고 싶으면? return을 적음
+    function random(){
+        const naming = generateNum();
+        console.log(naming);
+        document.getElementById("area6").innerHTML = naming("홍길동");
+    }
+    //클로저(Closure) : 외부 ㅎ마수 실행이 끝나더라고
+    //반환한 내부 함수를 통해서 외부 함수 내 변수를 사용할 수 있도록 하는 기술
+</script>
+
+<hr>
+
+<h3>익명함수를 반환하는 경우</h3>
+<button onclick="testFn()();">극단적인 코드</button>
+<Script>
+    function testFn(){
+
+        return function(){
+            alert("재밌겠따.")};
+    }
+    //return 해서 익명함수를 받으려고 () 를 하나 더  붙임
+</Script>
+
+</body>
+</html>
