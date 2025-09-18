@@ -1,61 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Document</title>
-<style>
-*{
-    margin:0;
-    padding: 0;
-}
-    div{
-        box-sizing: border-box;
-    }
-    #wrap{
-        width:1200px;
-        height:400px;
-        margin: auto;
-        box-shadow: 1px 1px 1px gold;
-    }
-    .card{
-        width:230px;
-        height:360px;
-        padding-bottom:20px;
-        display:inline-block;
-        &:hover{
-            box-shadow: 1px 2px 4px lightgreen;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
         }
-    }
-    .card>img{
-        width:230px;
-        height:300px;
 
-    }
-    
-    .card>h4{
-        font-size: 18px;
-        font-weight: 800;
-    }
-    .card>p{
-        font-size: 14px;
-        font-weight: 500;
-    }
+        div {
+            box-sizing: border-box;
+        }
 
+        #wrap {
+            width: 1200px;
+            height: 400px;
+            margin: auto;
+            box-shadow: 1px 1px 1px gold;
+        }
 
+        .card {
+            width: 230px;
+            height: 360px;
+            padding-bottom: 20px;
+            display: inline-block;
 
+            &:hover {
+                box-shadow: 1px 2px 4px lightgreen;
+            }
+        }
 
+        .card>img {
+            width: 230px;
+            height: 300px;
 
+        }
 
+        .card>h4 {
+            font-size: 18px;
+            font-weight: 800;
+        }
 
+        .card>p {
+            font-size: 14px;
+            font-weight: 500;
+        }
 
-
-
-
-
-
-
-
-    
-</style>
+        area {
+            background-color: lemonchiffon;
+            border: 1px solid blanchedalmond;
+            height: 300px;
+        }
+    </style>
 
 
 </head>
@@ -63,161 +60,227 @@
 
 
 <body>
+
+    <h1>배열과 객체의 활용</h1>
+
+    <h3>객체배열 써보기</h3>
+
+    <div id="wrap"></div>
+
+    <script>
+        window.onload = function () {
+            //컨트롤러로 요청을 보냄~
+            /*function 요청보내는 함수 (){
+                //어쩌구저쩌구
     
-<h1>배열과 객체의 활용</h1>
+            }
+            요청보내는함수();*/
 
-<h3>객체배열 써보기</h3>
-
-<div id="wrap"></div>
-
-<script>
-   window.onload = function(){
-        //컨트롤러로 요청을 보냄~
-        /*function 요청보내는 함수 (){
-            //어쩌구저쩌구
-
-        }
-        요청보내는함수();*/
-        
-        //컨트롤러가 반환해주는 응답데이터라고 가정
-        //배열이오고 객체가 5개인 배열
-        const webtoons =[
-            {image: "https://image-comic.pstatic.net/webtoon/842620/thumbnail/thumbnail_IMAG21_44eb7809-90e1-46da-a0ec-1ead08a8e9e9.jpg",
-             title: "해골전령이야기",
-             author: "kain_y,소라게",
-            },
-            {image: "https://image-comic.pstatic.net/webtoon/807178/thumbnail/thumbnail_IMAG21_28fcfb22-aae7-41b4-8767-05f6dd176b03.jpg",
-             title: "캐슬 2:만인지상",
-             author: "정연,박만사",
-            },
-            {image: "https://image-comic.pstatic.net/webtoon/642598/thumbnail/thumbnail_IMAG21_c784c8b0-c6d3-46ca-9a02-d3c4c04a8c83.jpg",
-             title: "조선왕조실톡",
-             author: "무적핑크",
-            },
-            {image: "https://image-comic.pstatic.net/webtoon/747269/thumbnail/thumbnail_IMAG21_aabd9952-ff45-47a2-a543-33f19a5c6708.jpg",
-             title: "전지적 독자 시점",
-             author: "UMI,슬리피-C,싱숑",
-            },
-            {image: "https://image-comic.pstatic.net/webtoon/838002/thumbnail/thumbnail_IMAG21_aee939b2-2d3c-445f-a7d8-82414f4f9482.jpg",
-             title: "종말이 찾아왔다",
-             author: "전선욱",
-            },
+            //컨트롤러가 반환해주는 응답데이터라고 가정
+            //배열이오고 객체가 5개인 배열
+            const webtoons = [
+                {
+                    image: "https://image-comic.pstatic.net/webtoon/842620/thumbnail/thumbnail_IMAG21_44eb7809-90e1-46da-a0ec-1ead08a8e9e9.jpg",
+                    title: "해골전령이야기",
+                    author: "kain_y,소라게",
+                },
+                {
+                    image: "https://image-comic.pstatic.net/webtoon/807178/thumbnail/thumbnail_IMAG21_28fcfb22-aae7-41b4-8767-05f6dd176b03.jpg",
+                    title: "캐슬 2:만인지상",
+                    author: "정연,박만사",
+                },
+                {
+                    image: "https://image-comic.pstatic.net/webtoon/642598/thumbnail/thumbnail_IMAG21_c784c8b0-c6d3-46ca-9a02-d3c4c04a8c83.jpg",
+                    title: "조선왕조실톡",
+                    author: "무적핑크",
+                },
+                {
+                    image: "https://image-comic.pstatic.net/webtoon/747269/thumbnail/thumbnail_IMAG21_aabd9952-ff45-47a2-a543-33f19a5c6708.jpg",
+                    title: "전지적 독자 시점",
+                    author: "UMI,슬리피-C,싱숑",
+                },
+                {
+                    image: "https://image-comic.pstatic.net/webtoon/838002/thumbnail/thumbnail_IMAG21_aee939b2-2d3c-445f-a7d8-82414f4f9482.jpg",
+                    title: "종말이 찾아왔다",
+                    author: "전선욱",
+                },
             ];
-      console.log(webtoons);   
-      
-      //const skeleton = webtoons[0];
-      //console.log(skeleton);
-    //   //const webtoon1 = `<div class="card">
-    //                         <image src="${skeleton.image}"/>
-    //                         <h4>${skeleton.title}</h4>
-    //                         <p>${skeleton.author}<p>
-    //                             </div>`;
+            console.log(webtoons);
 
-    let element = "";
-    for(let webtoon of webtoons){
-        element+=`<div class ="card">
+            //const skeleton = webtoons[0];
+            //console.log(skeleton);
+            //   //const webtoon1 = `<div class="card">
+            //                         <image src="${skeleton.image}"/>
+            //                         <h4>${skeleton.title}</h4>
+            //                         <p>${skeleton.author}<p>
+            //                             </div>`;
+
+            let element = "";
+            for (let webtoon of webtoons) {
+                element += `<div class ="card">
                     <img src ="${webtoon.image}"/>
                     <h4>${webtoon.title}</h4>
                     <p>${webtoon.author}</p>
                         </div>`;
-    };
-     document.getElementById("wrap").innerHTML = element;
-    };
-</script>
+            };
+            document.getElementById("wrap").innerHTML = element;
+        };
+    </script>
 
 
-<hr>
+    <hr>
 
 
 
-<div id="wrap2"></div>
+    <div id="wrap2"></div>
 
-<script>
-    window.onload=function(){
-        const air=[
-            {
-            image:"",
-            reserveDay:"11월 28일",
-            price:"₩80,453",
-            day:"2박",
-            rate:4.86},
-            {
-            image:"",
-            reserveDay:"11월 28일",
-            price:"₩80,453",
-            day:"2박",
-            rate:4.86},
-            {
-            image:"",
-            reserveDay:"11월 28일",
-            price:"₩80,453",
-            day:"2박",
-            rate:4.86},
-            {
-            image:"",
-            reserveDay:"11월 28일",
-            price:"₩80,453",
-            day:"2박",
-            rate:4.86},
-            {
-            image:"",
-            reserveDay:"11월 28일",
-            price:"₩80,453",
-            day:"2박",
-            rate:4.86},
-            {
-            image:"",
-            reserveDay:"11월 28일",
-            price:"₩80,453",
-            day:"2박",
-            rate:4.86},
+    <script>
+        window.onload = function () {
+            const air = [
+                {
+                    image: "",
+                    reserveDay: "11월 28일",
+                    price: "₩80,453",
+                    day: "2박",
+                    rate: 4.86
+                },
+                {
+                    image: "",
+                    reserveDay: "11월 28일",
+                    price: "₩80,453",
+                    day: "2박",
+                    rate: 4.86
+                },
+                {
+                    image: "",
+                    reserveDay: "11월 28일",
+                    price: "₩80,453",
+                    day: "2박",
+                    rate: 4.86
+                },
+                {
+                    image: "",
+                    reserveDay: "11월 28일",
+                    price: "₩80,453",
+                    day: "2박",
+                    rate: 4.86
+                },
+                {
+                    image: "",
+                    reserveDay: "11월 28일",
+                    price: "₩80,453",
+                    day: "2박",
+                    rate: 4.86
+                },
+                {
+                    image: "",
+                    reserveDay: "11월 28일",
+                    price: "₩80,453",
+                    day: "2박",
+                    rate: 4.86
+                },
             ];
             console.log(air);
 
-    }
+        }
+    </script>
+
+    <hr>
+
+    <h3>생성자 함수</h3>
+
+    <p>new 키워드를 사용해서 객체를 생성할 수 있는 함수를 의미</p>
+
+    <button onclick="con();">실행</button>
 
 
 
+    <script>
 
-</script>
+        function con() {
+            //웹툰객체를 만들어보자
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            const webtoon1 = {
+                image: "",
+                title: " ",
+                author: ""
+            };
+            const webtoon2 = new Webtoon("이미지경로", "재밌는웹툰", "배주영");
+            //  생성자 함수 정의(선언할 때 첫 글자를 대문자로 만들면 됨)
+            function Webtoon(image, title, author) {
+                this.image = image;
+                this.title = title;
+                this.author = author;
 
 
+                //위에 하기 전에 먼저 this라는 빈객체가 생성된다. 그리고 저 과정들이 속성의 값을 대입하는 것인데 때문에 불러올수 있음.
+            }
+            console.log(webtoon2);
+        }
+    </script>
+
+    <hr>
 
 
+    <h3>date객체</h3>
+
+    <button onclick="dateFn();">날짜사용</button>
+    <div id="area1" class="area"></div>
+
+    <script>
+
+        function dateFn() {
+            const area = document.getElementById('area1');
+            //Date 객체
+            const date1 = new Date();
+            area.innerHTML = `현대날짜:${date1}<br>`;
 
 
+            const date2 = new Date(2025, 2, 12);
+            area.innerHTML += `종강일 : 
+        $date2}<br>` ;
+            //월의 경  우 인덱스를 의미하기 때문에 해당 월에 -1을 헤줘야
 
 
+            const date3 = new Date(2026, 2 - 1, 12, 17, 50, 0);
+            area.innerHTML += `종강일(시간)  : ${date3}<br>`;
 
 
+            const date4 = new Date(2026, 2 - 1, 12, 17, 50, 0, 5000);
+            area.innerHTML += `찐종갈일(시간) : ${date4}<br>`;
 
 
+            const endDay = new Date(2026, 2 - 1, 12);
+            const today = new Date();
+            area.innerHTML += `종강일까지 디데이 : ${endDay - today}<br>`;
+
+            //일자 단위로 바꿔주자
+            //ms==> Day
+            //1s== 1000ms
+            //1m==60s * 60== 6o*1000ms
+            //1h==60m==60*60s==60*60*1000ms
+            //1d==24h==24*60m==24*60*60s == 24*60*60*1000
+            const dDay = (endDay - today) / (24 * 60 * 60 * 1000);
+            alert(`종강까지${Math.cell(dDay)}일 남았습니다`);
+
+            area.innerHTML += `${date1.getFullYear()}<br>
+                         ${date1.getMonth() + 1}<br>
+                         ${date1.getDate()}<br>
+                         ${date1.getHours()}<br>
+                         ${date1.getMinutes}<br>
+                         ${date1.getSeconds()}<br>`;
+
+            //날짜에서 특정데이터만
+
+            //요일만
+            //0==일요일 1==월요일 2== 화요일 3==수요일
+            area.innerHTML += `${date1.getDay()}`;
 
 
-
-
-
-
-
-
-
+        }
+    </script>
 </body>
+
 </html>
 
 
